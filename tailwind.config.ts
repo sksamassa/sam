@@ -13,6 +13,9 @@ export default {
           1: "#1C1F2E",
           2: "#161925",
         },
+        blue: {
+          1: "#0E78F9",
+        },
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
