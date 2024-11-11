@@ -1,0 +1,28 @@
+<svg
+  width="120"
+  height="120"
+  viewBox="0 0 120 120"
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  aria-label="Sam - Real-Time Video App Logo"
+>
+  <!-- Outer Circle -->
+  <circle cx="60" cy="60" r="50" fill="#0078FF" opacity="0.2" />
+
+  <!-- Inner Circle -->
+  <circle cx="60" cy="60" r="40" fill="#0078FF" opacity="0.5" />
+
+  <!-- Play Button Triangle -->
+  <polygon points="50,40 85,60 50,80" fill="#FFFFFF" />
+
+  <!-- Wave Elements -->
+  <path
+    d="M30 60c0-5 5-10 10-10s10 5 10 10-5 10-10 10-10-5-10-10z"
+    fill="#0078FF"
+  />
+  <path
+    d="M15 60c0-10 10-20 20-20s20 10 20 20-10 20-20 20-20-10-20-20z"
+    fill="#0078FF"
+    opacity="0.5"
+  />
+</svg>
