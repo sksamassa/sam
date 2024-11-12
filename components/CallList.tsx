@@ -46,16 +46,16 @@ const CallList = ({ type }: { type: "upcoming" | "recordings" | "ended" }) => {
         const callData = await Promise.all(
           callRecordings.map((meeting) => meeting.queryRecordings())
         );
-  
+
         const recordings = callData
           .filter((call) => call.recordings.length > 0)
           .flatMap((call) => call.recordings);
-  
+
         setRecordings(recordings);
       } catch (_) {
         toast({
-          title: 'Try it later.'
-        })
+          title: "Try it later.",
+        });
       }
     };
 
@@ -72,9 +72,13 @@ const CallList = ({ type }: { type: "upcoming" | "recordings" | "ended" }) => {
   return (
     <div className="grid grid-cols-1 gap-5 xl:grid-cols-2">
       {calls && calls.length > 0 ? (
-        calls.map((meeting: Call | CallRecording) => (
+        calls.map((meeting: Call | CallRecording, index) => (
           <MeetingCard
-            key={(meeting as Call)?.id}
+            key={
+              (meeting as Call)?.id ||
+              (meeting as CallRecording)?.filename ||
+              index
+            }
             icon={
               type === "ended"
                 ? "/icons/previous.svg"
@@ -83,8 +87,8 @@ const CallList = ({ type }: { type: "upcoming" | "recordings" | "ended" }) => {
                 : "/icons/recordings.svg"
             }
             title={
-              (meeting as Call).state?.custom.description.substring(0, 20) ||
-              (meeting as CallRecording).filename.substring(0, 20) ||
+              (meeting as Call).state?.custom.description?.substring(0, 20) ||
+              (meeting as CallRecording).filename?.substring(0, 20) ||
               "No description"
             }
             date={
