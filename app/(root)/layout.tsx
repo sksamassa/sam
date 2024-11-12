@@ -1,8 +1,13 @@
-import StreamVideoProvider from "@/providers/StreamClientProvider";
-import React from "react";
+import { ReactNode } from 'react';
 
-const HomeLayout = ({ children }: { children: React.ReactNode }) => {
-  return <StreamVideoProvider>{children}</StreamVideoProvider>;
+import StreamVideoProvider from '@/providers/StreamClientProvider';
+
+const RootLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
+  return (
+    <main>
+      <StreamVideoProvider>{children}</StreamVideoProvider>
+    </main>
+  );
 };
 
-export default HomeLayout;
+export default RootLayout;
