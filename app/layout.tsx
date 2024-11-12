@@ -2,6 +2,15 @@ import "./globals.css";
 import React from "react";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "@/components/ui/toaster";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Sam",
+  description: "Video calling app",
+  icons: {
+    icon: "/icons/logo.svg",
+  },
+};
 
 export default function RootLayout({
   children,

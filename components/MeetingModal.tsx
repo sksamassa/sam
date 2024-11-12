@@ -9,7 +9,7 @@ interface MeetingModalProps {
   onClose: () => void;
   title: string;
   className?: string;
-  buttonText: string;
+  buttonText?: string;
   instantMeeting?: boolean;
   handleClick?: () => void;
   children?: React.ReactNode;
