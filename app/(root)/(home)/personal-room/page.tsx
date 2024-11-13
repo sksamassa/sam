@@ -8,6 +8,8 @@ import { useStreamVideoClient } from "@stream-io/video-react-sdk";
 import { useRouter } from "next/navigation";
 import React from "react";
 
+export const dynamic = "force-dynamic";
+
 const Table = ({
   title,
   description,
@@ -51,6 +53,8 @@ const PersonalRoom = () => {
 
     router.push(`/meeting/${meetingId}?personal=true`);
   };
+
+  if (!user || !meetingId || !meetingLink) return null; // Ensures prerendering doesn't trigger before data is available
 
   return (
     <section className="flex size-full flex-col gap-10 text-white">
