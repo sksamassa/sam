@@ -50,7 +50,6 @@ const CallList = ({ type }: { type: "upcoming" | "recordings" | "ended" }) => {
         const recordings = callData
           .filter((call) => call.recordings.length > 0)
           .flatMap((call) => call.recordings);
-
         setRecordings(recordings);
       } catch (_) {
         toast({
