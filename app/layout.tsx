@@ -32,6 +32,7 @@ export default function RootLayout({
           colorInputText: "#fff",
         },
       }}
+      publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
     >
       <html lang="en">
         <body className={`bg-dark-2 text-white`}>
